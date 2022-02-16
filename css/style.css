@@ -1,8 +1,14 @@
+body, h2, h3, h4, h5{
+    margin: 0;
+    color: rgba(26, 46, 53, 0.89);
+}
 .header-icon{
     width: auto;
     height: 5vw;
 }
 .header-text{
     font-size: 5vw;
-    color: #31A5AC;
+}
+.custom-btn{
+    background-color: #ff4f5be8;
 }

@@ -15,35 +15,76 @@
 <body>
     <header>
         <!-- Header section -->
-        <section class="d-flex justify-content-center align-items-center my-4 text-info">
-            <h2 class="px-2 header-text">Engineers Money Manager</h2>
+        <section class="container-fluid d-flex justify-content-center align-items-center my-4 text-info">
+            <h2 class="px-2 fw-bold header-text">Engineers Money Manager</h2>
             <img src="images/cost.png" class="header-icon" alt="">
         </section>
     </header>
     <main>
         <!-- App section -->
-        <section class="container">
+        <section class="container container-md-fluid container-sm-fluid">
             <div class="row">
-                <div class="col-6">
+                <div class="col-lg-6 col-md-6 col-sm">
                     <img src="images/main-image.jpg" class="img-fluid" alt="">
                 </div>
-                <div class="col-6">
-                    <h4 class="text-center">Income</h4>
-                    <div class="d-flex justify-content-center">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="pe-2">
-                                <h5>Income:</h5>
+                <div class="col-lg-6 col-md-6 col-sm ">
+                    <!-- Income -->
+                    <div class="row ">
+                        <h3 class="text-center fw-bold">Income</h3>
+                        <div class="row mt-4">
+                            <div class="col">
+                                <h5 class="text-end">Income:</h5>
                             </div>
-                            <div class="input-group">
+                            <div class="col input-group">
                                 <input type="text" class="form-control">
                             </div>
                         </div>
-
                     </div>
 
+                    <!-- Expenses -->
+                    <div class="row my-3">
+                        <h3 class="text-center fw-bold">Expenses</h3>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <h5 class="text-end">Food:</h5>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <h5 class="text-end">Rent:</h5>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <h5 class="text-end">Clothes:</h5>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mt-4">
+                            <button class="custom-btn px-5 py-2 border-0 rounded-1 text-white">Calculate</button>
+                        </div>
+                    </div>
+
+                    <!-- Total Expenses -->
+                    <div class="row">
+                        <h5 class="text-center fw-bold">Total Expenses:</h5>
+                    </div>
+
+                    <!-- Balance -->
+                    <div class="row">
+                        <h5 class="text-center fw-bold mt-2">Balance:</h5>
+                    </div>
+                    
                 </div>
             </div>
-
         </section>
     </main>
 
