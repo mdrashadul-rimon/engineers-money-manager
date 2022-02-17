@@ -1,0 +1,35 @@
+function validation() {
+    let validationError = document.getElementById('validate');
+    if (isNaN(document.getElementById('income-input').value)) {
+        validationError.textContent = "Please enter a valid number";
+        validationError.style.color = "red";
+    }
+    else {
+        validationError.textContent = "Do not give negative number";
+        validationError.style.color = "blue";
+    }
+}
+
+document.getElementById('calculate-btn').addEventListener('click', function () {
+    let incomeInput = document.getElementById('income-input');
+    let foodInput = document.getElementById('food-input');
+    let rentInput = document.getElementById('rent-input');
+    let clothesInput = document.getElementById('clothes-input');
+
+    let income = parseFloat(incomeInput.value);
+    let totalExpenses = parseFloat(foodInput.value) + parseFloat(rentInput.value) + parseFloat(clothesInput.value);
+    let balance = document.getElementById('balance');
+
+    //expenses
+    if (income >= totalExpenses || income > document.getElementById('saving-percent').value ) {
+        document.getElementById('total-expenses').innerText = totalExpenses;
+        let showBalance = income - totalExpenses;
+        balance.innerText = showBalance;
+    }
+    else {
+        validation();
+    }
+
+
+
+});
