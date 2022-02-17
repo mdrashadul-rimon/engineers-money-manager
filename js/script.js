@@ -92,6 +92,7 @@ document.getElementById('saving-btn').addEventListener('click', function () {
         // console.log(remainingBalance);
         document.getElementById('remaining-balance').innerText = remainingBalance.toFixed(2);
     }
+    //error for not enough money savings
     else {
         if (savingsAmount > balance) {
             let validationError = document.getElementById('validate');
