@@ -93,6 +93,10 @@ document.getElementById('saving-btn').addEventListener('click', function () {
         document.getElementById('remaining-balance').innerText = remainingBalance.toFixed(2);
     }
     else {
-        validation();
+        if (savingsAmount > balance) {
+            let validationError = document.getElementById('validate');
+            validationError.textContent = "Not Enough amount for savings.";
+            validationError.style.color = "red";
+        }
     }
 });
