@@ -10,22 +10,32 @@ function validation() {
     }
 }
 
-document.getElementById('calculate-btn').addEventListener('click', function () {
+function getIncomeInput() {
     let incomeInput = document.getElementById('income-input');
+    let income = parseFloat(incomeInput.value);
+    return income;
+}
+
+function Balance(num) {
+    document.getElementById('balance').innerText = num;
+}
+
+document.getElementById('calculate-btn').addEventListener('click', function () {
+
+    let income = getIncomeInput(); //call income input function
+
+    //getting the inputs from fields
     let foodInput = document.getElementById('food-input');
     let rentInput = document.getElementById('rent-input');
     let clothesInput = document.getElementById('clothes-input');
-
-    let balance = document.getElementById('balance');
-
-    let income = parseFloat(incomeInput.value);
+    // adding all the values of expenses
     let totalExpenses = parseFloat(foodInput.value) + parseFloat(rentInput.value) + parseFloat(clothesInput.value);
-
-    //expenses
+    //expenses check validation
     if (income >= totalExpenses) {
         document.getElementById('total-expenses').innerText = totalExpenses;
         let showBalance = income - totalExpenses;
-        balance.innerText = showBalance;
+        let balance = showBalance;
+        Balance(balance); //call balance function with sending arguments to parameter to show output
     }
 
     // else {
@@ -40,13 +50,13 @@ document.getElementById('saving-btn').addEventListener('click', function () {
     let savingInput = document.getElementById('saving-input');
     let savings = parseFloat(savingInput.value);
     if (income > savings) {
-        let savingsAmount = (income/100) * savings;
+        let savingsAmount = (income / 100) * savings;
         document.getElementById('savings-amount').innerText = savingsAmount;
-        
+
         let balance = parseFloat(document.getElementById('balance').innerText);
-        
+
         let remainingBalance = balance - savingsAmount;
         document.getElementById('remaining-balance').innerText = remainingBalance;
-        
+
     }
 });
