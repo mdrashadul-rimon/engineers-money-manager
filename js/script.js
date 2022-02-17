@@ -4,13 +4,12 @@ function validation() {
     let foodInput = getFoodInput();
     let rentInput = getRentInput();
     let clothesInput = getClothesInput();
-    let balance = getFromBalance();
 
     if (isNaN(incomeInput) || isNaN(foodInput) || isNaN(rentInput) || isNaN(clothesInput)) {
         validationError.textContent = "Please enter a valid number not string";
         validationError.style.color = "red";
     } else {
-        validationError.textContent = "STOP! Should not be negative, Stay positive always.";
+        validationError.textContent = "STOP! Negative or Big Value, Stay positive always.";
         validationError.style.color = "blue";
     }
 }
@@ -27,25 +26,21 @@ function getFoodInput() {
     let food = parseFloat(foodInput.value);
     return food;
 }
+//rent input
 function getRentInput() {
     let rentInput = document.getElementById('rent-input');
     let rent = parseFloat(rentInput.value);
     return rent;
 }
+//clothes input
 function getClothesInput() {
     let clothesInput = document.getElementById('clothes-input');
     let clothes = parseFloat(clothesInput.value);
     return clothes;
 }
-//balance to show
+//balance to show and get
 function postToBalance(num) {
     document.getElementById('balance').innerText = num;
-    // let temp = num;
-    // let a = document.getElementById('balance');
-    // a.innerText = temp;
-    // let balance = parseFloat(a.innerText);
-    // console.log(balance);
-    // return balance;
 }
 function getFromBalance() {
     let balance = document.getElementById('balance').innerText;
@@ -90,7 +85,7 @@ document.getElementById('saving-btn').addEventListener('click', function () {
     // calculation of savings
     let savingsAmount = (income / 100) * savings;
     //validation checking and calling function of validation
-    if ((income > savings) && (savings <= balance) && (savingsAmount <= balance)) {
+    if ((income > savings) && (savings <= balance) && (savingsAmount <= balance) && (savings >= 0)) {
         document.getElementById('savings-amount').innerText = savingsAmount.toFixed(2);
 
         let remainingBalance = balance - savingsAmount;
