@@ -90,7 +90,7 @@ document.getElementById('saving-btn').addEventListener('click', function () {
     // calculation of savings
     let savingsAmount = (income / 100) * savings;
     //validation checking and calling function of validation
-    if ((income > savings) && (savings < balance) && (savingsAmount < balance)) {
+    if ((income > savings) && (savings <= balance) && (savingsAmount <= balance)) {
         document.getElementById('savings-amount').innerText = savingsAmount.toFixed(2);
 
         let remainingBalance = balance - savingsAmount;
